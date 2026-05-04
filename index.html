@@ -752,7 +752,64 @@
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 260px 140px;
             gap: 12px;
+            justify-self: center;
+            align-self: center;
+            width: 100%;
         }
+
+        .tradition-images img {
+            cursor: zoom-in;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .tradition-images img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+        }
+
+        /* ===== LIGHTBOX ===== */
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+            padding: 20px;
+        }
+
+        #lightbox.open { display: flex; }
+
+        #lightbox-img {
+            max-width: 90vw;
+            max-height: 88vh;
+            border-radius: 12px;
+            box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+            object-fit: contain;
+            cursor: default;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            background: rgba(255,255,255,0.12);
+            border: none;
+            color: white;
+            font-size: 1.4rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .lightbox-close:hover { background: rgba(255,255,255,0.25); }
 
         .tradition-images .img-large {
             grid-column: 1;
@@ -934,9 +991,15 @@
         <div class="container">
             <div class="tradition-grid">
                 <div class="tradition-images">
-                    <img src="image-plat.jpg" class="img-large" alt="Plat oriental au restaurant Le Théâtre">
-                    <img src="image-boisson.jpg" class="img-small" alt="Thé à la menthe traditionnel">
-                    <img src="image-accueil.jpg" class="img-accent" alt="Salle du restaurant Le Théâtre">
+                    <img src="image-plat.jpg" class="img-large" alt="Plat oriental au restaurant Le Théâtre" onclick="openLightbox(this.src, this.alt)">
+                    <img src="image-boisson.jpg" class="img-small" alt="Thé à la menthe traditionnel" onclick="openLightbox(this.src, this.alt)">
+                    <img src="image-accueil.jpg" class="img-accent" alt="Salle du restaurant Le Théâtre" onclick="openLightbox(this.src, this.alt)">
+                </div>
+
+                <!-- LIGHTBOX -->
+                <div id="lightbox" onclick="closeLightbox()">
+                    <button class="lightbox-close" onclick="event.stopPropagation(); closeLightbox()">✕</button>
+                    <img id="lightbox-img" src="" alt="">
                 </div>
                 <div>
                     <div class="section-label">L'Expérience</div>
@@ -1184,6 +1247,23 @@
                 tab.classList.add('active');
                 document.getElementById(target).classList.add('active');
             });
+        });
+
+        // Lightbox
+        function openLightbox(src, alt) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-img').alt = alt;
+            document.getElementById('lightbox').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeLightbox();
         });
 
         // Smooth scroll
