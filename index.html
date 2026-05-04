@@ -2,20 +2,17 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     
-    <!-- SEO & GEO OPTIMIZATION WASQUEHAL -->
     <title>Le Théâtre | Restaurant Marocain & Méditerranéen Wasquehal</title>
     <meta name="description" content="Découvrez Le Théâtre à Wasquehal. Cuisine marocaine et méditerranéenne authentique, couscous et tajines maison. Une expérience dépaysante aux portes de Lille. Réservez votre table !">
     <meta name="keywords" content="restaurant marocain wasquehal, couscous lille, tajine nord, restaurant mediterraneen wasquehal, manger marocain lille, le theatre restaurant">
     <link rel="canonical" href="https://www.letheatre-wasquehal.fr/">
     
-    <!-- OPEN GRAPH (PARTAGE SOCIAL) -->
     <meta property="og:title" content="Le Théâtre | Restaurant Oriental Authentique à Wasquehal">
     <meta property="og:description" content="Un voyage culinaire au Maroc, une cuisine généreuse et un accueil chaleureux au cœur de Wasquehal.">
     <meta property="og:type" content="restaurant">
     
-    <!-- JSON-LD (GOOGLE RICH SNIPPETS) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -29,436 +26,1071 @@
         "postalCode": "59290",
         "addressCountry": "FR"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 50.6698,
-        "longitude": 3.1311
-      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 50.6698, "longitude": 3.1311 },
       "url": "https://www.letheatre-wasquehal.fr",
       "telephone": "+33665973558",
       "priceRange": "$$",
       "servesCuisine": "Marocaine, Méditerranéenne",
       "openingHoursSpecification": [
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "11:30", "closes": "14:00" },
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "19:30", "closes": "22:00" }
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "11:30", "closes": "14:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "19:30", "closes": "22:00" }
       ]
     }
     </script>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.jpg">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
     <style>
-        /* ACTIVATION DU SCROLL FLUIDE */
-        html {
-            scroll-behavior: smooth;
-        }
-
         :root {
-            --primary: #d4833b; /* Terre de Sienne / Oriental */
-            --bg-cream: #f9f5f0;
-            --text-dark: #2c1e14;
-            --text-light: #666;
+            --copper: #c8763a;
+            --copper-light: #e0944f;
+            --copper-dark: #9a5520;
+            --sand: #f7f1e8;
+            --sand-dark: #ede3d4;
+            --ink: #1e1208;
+            --ink-soft: #3d2a18;
+            --muted: #8c7a6a;
             --white: #ffffff;
-            --dark-section: #1a0f08;
-            --font-title: 'Playfair Display', serif;
-            --font-body: 'Lato', sans-serif;
-            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --night: #120b04;
+            --night-mid: #1e1208;
+            --r: 16px;
+            --r-lg: 24px;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-body); background-color: var(--bg-cream); color: var(--text-dark); line-height: 1.6; padding-bottom: 60px; }
-        h1, h2, h3 { font-family: var(--font-title); }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-        /* NAVIGATION */
-        nav { position: absolute; top: 0; width: 100%; z-index: 100; padding: 30px 0; }
-        .nav-inner { display: flex; justify-content: space-between; align-items: center; color: var(--white); }
-        .logo { font-size: 1.8rem; font-weight: 700; font-family: var(--font-title); }
-        .nav-links { display: flex; gap: 30px; font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; }
-        .btn-nav { background: var(--primary); padding: 12px 25px; border-radius: 4px; }
+        html { scroll-behavior: smooth; font-size: 16px; }
 
-        /* HERO SECTION */
-        .hero { 
-            height: 100vh; 
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('image-accueil.jpg') center/cover;
-            display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
-        }
-        .hero-content { max-width: 800px; }
-        .hero-label { text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; color: var(--primary); margin-bottom: 10px; display: block; font-weight: bold;}
-        .hero h1 { font-size: 6rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.5rem; font-family: var(--font-title); font-style: italic; margin-bottom: 30px; }
-        .hero-btns { display: flex; gap: 20px; justify-content: center; }
-        .btn { padding: 15px 35px; border-radius: 4px; font-weight: bold; text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px; }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-outline { border: 2px solid white; color: white; }
-        .badge-status { margin-top: 40px; display: inline-flex; align-items: center; gap: 10px; background: rgba(0,0,0,0.5); padding: 8px 20px; border-radius: 50px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.2); }
-        .dot { width: 8px; height: 8px; background: #4caf50; border-radius: 50%; }
-
-        /* SECTION INTRO (RESTAURANT) */
-        .section-padding { padding: 100px 0; }
-        .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .label { color: var(--primary); text-transform: uppercase; font-weight: bold; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 20px; display: block; }
-        .section-title { font-size: 3.5rem; line-height: 1.1; margin-bottom: 30px; }
-        .section-title em { color: var(--primary); font-style: italic; }
-        .stats-box { background: #efe6d5; padding: 40px; border-radius: 8px; display: flex; gap: 40px; margin-top: 40px; border-left: 4px solid var(--primary); }
-        .stat-item h3 { font-size: 2.5rem; color: var(--primary); }
-        .info-cards { display: flex; flex-direction: column; gap: 15px; }
-        .info-card { background: white; padding: 25px; border-radius: 12px; display: flex; align-items: center; gap: 20px; box-shadow: var(--shadow); }
-        .info-card .icon { font-size: 1.5rem; }
-
-        /* SECTION HISTOIRE */
-        .history-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
-        .history-images { position: relative; }
-        .img-large { width: 90%; border-radius: 15px; box-shadow: var(--shadow); }
-        .img-small { position: absolute; bottom: -30px; right: 0; width: 50%; border: 8px solid var(--white); border-radius: 15px; box-shadow: var(--shadow); }
-        .features-box { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; background: #e9e2d1; padding: 30px; border-radius: 15px; margin-top: 40px; text-align: center; }
-        .feature-item img { width: 40px; margin-bottom: 10px; }
-
-        /* SECTION MENU (DARK) */
-        .dark-section { background-color: var(--dark-section); color: var(--white); position: relative; }
-        .dark-section::before { content: "★"; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; font-size: 20px; word-spacing: 30px; line-height: 40px; overflow: hidden; }
-        .menu-tabs { display: flex; gap: 15px; margin: 40px 0; flex-wrap: wrap; }
-        .tab { padding: 10px 25px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.2); font-weight: bold; text-transform: uppercase; font-size: 0.8rem; cursor: pointer; transition: 0.3s; }
-        .tab:hover { border-color: var(--primary); color: var(--primary); }
-        .tab.active { background: var(--primary); border-color: var(--primary); color: white; }
-        
-        .menu-content-wrapper { min-height: 300px; }
-        .menu-category { display: none; }
-        .menu-category.active { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; animation: fadeIn 0.5s ease; }
-        
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        .menu-item { background: rgba(255,255,255,0.03); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
-        .menu-header { display: flex; justify-content: space-between; margin-bottom: 10px; }
-        .menu-header h4 { font-family: var(--font-title); font-size: 1.4rem; }
-        .price { color: var(--primary); font-weight: bold; }
-        .btn-reserve { margin-top: 50px; border: 1px solid var(--primary); padding: 15px 40px; color: var(--primary); display: block; width: fit-content; margin-left: auto; margin-right: auto; }
-
-        /* TESTIMONIALS */
-        .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .testi-card { background: white; padding: 40px; border-radius: 15px; box-shadow: var(--shadow); position: relative; }
-        .stars { color: var(--primary); margin-bottom: 20px; }
-        .quote-icon { position: absolute; top: 30px; right: 30px; opacity: 0.1; width: 30px; }
-
-        /* CONTACT & HORAIRES */
-        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-        .horaires-table { width: 100%; border-collapse: collapse; margin-top: 30px; }
-        .horaires-table tr { border-bottom: 1px solid rgba(0,0,0,0.05); }
-        .horaires-table td { padding: 12px 0; }
-        .day-now { background: #efe6d5; font-weight: bold; color: var(--primary); }
-        
-        .map-placeholder { 
-            border-radius: 20px; 
-            height: 100%; 
-            min-height: 450px; 
-            overflow: hidden; 
-            box-shadow: var(--shadow); 
-            border: 1px solid rgba(0,0,0,0.05);
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--sand);
+            color: var(--ink);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* STICKY CALL BUTTON FOR MOBILE */
-        .sticky-mobile-call {
-            display: none;
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+
+        /* ===== STICKY BOTTOM BAR ===== */
+        .bottom-bar {
             position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--primary);
+            bottom: 0; left: 0; right: 0;
+            z-index: 1000;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--night);
+            border-top: 1px solid rgba(200,118,58,0.3);
+            padding: env(safe-area-inset-bottom, 0) 0 0;
+        }
+
+        .bottom-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 10px;
+            gap: 4px;
+            font-size: 0.65rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .bottom-btn.primary {
+            background: var(--copper);
             color: white;
-            text-align: center;
-            padding: 18px;
-            font-weight: bold;
-            z-index: 999;
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+        }
+
+        .bottom-btn .icon { font-size: 1.3rem; }
+
+        /* ===== HEADER / NAV ===== */
+        .site-nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 900;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(18,11,4,0.85) 0%, transparent 100%);
+            backdrop-filter: blur(0px);
+            transition: background 0.3s, backdrop-filter 0.3s;
+        }
+
+        .site-nav.scrolled {
+            background: rgba(18,11,4,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(200,118,58,0.15);
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+
+        .nav-logo span {
+            display: block;
+            font-size: 0.5rem;
+            letter-spacing: 4px;
+            color: var(--copper-light);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-top: -3px;
+        }
+
+        .nav-call {
+            background: var(--copper);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        @media (max-width: 968px) {
-            .intro-grid, .history-grid, .menu-category.active, .testimonial-grid, .contact-container { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 3.5rem; }
-            .nav-links { display: none; }
-            .map-placeholder { min-height: 350px; }
-            .sticky-mobile-call { display: block; }
-            .hero { height: 90vh; }
+        .nav-links-desktop {
+            display: none;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links-desktop a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        .nav-links-desktop a:hover { color: var(--copper-light); }
+
+        @media (min-width: 768px) {
+            .nav-links-desktop { display: flex; }
+            .nav-call { display: flex; }
+        }
+
+        /* ===== HERO (NEW CENTERING) ===== */
+        .hero {
+            height: 100svh;
+            min-height: 600px;
+            background: 
+                linear-gradient(180deg, rgba(18,11,4,0.5) 0%, rgba(18,11,4,0.5) 100%),
+                url('image-accueil.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-top-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--copper-light);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.5rem, 12vw, 7.5rem);
+            line-height: 1;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .hero-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: clamp(1.1rem, 3vw, 1.6rem);
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 35px;
+            max-width: 800px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 30px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            white-space: nowrap;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-copper {
+            background: var(--copper);
+            color: white;
+            border: 1px solid var(--copper);
+        }
+
+        .btn-ghost {
+            background: rgba(0,0,0,0.2);
+            border: 2px solid white;
+            color: white;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-status-pill {
+            margin-top: 35px;
+            background: rgba(0,0,0,0.4);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #f87171; /* défaut fermé, remplacé par JS */
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* ===== QUICK INFO STRIP ===== */
+        .quick-strip {
+            background: var(--night);
+            padding: 0 20px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            display: flex;
+            gap: 0;
+        }
+
+        .quick-strip::-webkit-scrollbar { display: none; }
+
+        .quick-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 24px;
+            border-right: 1px solid rgba(255,255,255,0.06);
+            white-space: nowrap;
+            min-width: fit-content;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8rem;
+        }
+
+        .quick-item .qi-icon { color: var(--copper-light); font-size: 1rem; }
+        .quick-item strong { color: white; display: block; font-size: 0.85rem; margin-bottom: 1px; }
+
+        /* ===== SECTIONS ===== */
+        .section { padding: 64px 20px; }
+        .section-sm { padding: 48px 20px; }
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.65rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--copper);
+            margin-bottom: 12px;
+        }
+
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 1px;
+            background: var(--copper);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 7vw, 3.5rem);
+            line-height: 1.05;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .section-title em { color: var(--copper); font-style: italic; }
+
+        /* ===== STATS ===== */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: var(--sand-dark);
+            border-radius: var(--r);
+            overflow: hidden;
+            margin-top: 32px;
+        }
+
+        .stat-cell {
+            background: var(--white);
+            padding: 24px 16px;
+            text-align: center;
+        }
+
+        .stat-cell .val {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--copper);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .stat-cell .lbl {
+            font-size: 0.72rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== MENU SECTION ===== */
+        .menu-section {
+            background: var(--night);
+            padding: 64px 20px;
+            color: var(--white);
+        }
+
+        .menu-section .section-title { color: var(--white); }
+
+        .menu-tabs-scroll {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            margin: 28px -20px 0;
+            padding: 0 20px;
+        }
+
+        .menu-tabs-scroll::-webkit-scrollbar { display: none; }
+
+        .menu-tabs {
+            display: flex;
+            gap: 8px;
+            width: max-content;
+            padding-bottom: 4px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.15);
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+            color: rgba(255,255,255,0.6);
+            background: none;
+        }
+
+        .tab.active {
+            background: var(--copper);
+            border-color: var(--copper);
+            color: white;
+        }
+
+        .menu-grid {
+            display: none;
+            flex-direction: column;
+            gap: 2px;
+            margin-top: 20px;
+            animation: fadeUp 0.3s ease;
+        }
+
+        .menu-grid.active { display: flex; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .menu-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--r);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .menu-card-info h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .menu-card-info p {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.5;
+        }
+
+        .menu-price {
+            color: var(--copper-light);
+            font-weight: 700;
+            font-size: 1rem;
+            white-space: nowrap;
+            padding-top: 2px;
+        }
+
+        .menu-cta-row {
+            margin-top: 28px;
+            text-align: center;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .reviews-scroll {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding-bottom: 4px;
+            margin: 0 -20px;
+            padding: 4px 20px 8px;
+        }
+
+        .reviews-scroll::-webkit-scrollbar { display: none; }
+
+        .review-card {
+            background: var(--white);
+            border-radius: var(--r-lg);
+            padding: 24px;
+            min-width: 280px;
+            max-width: 320px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        }
+
+        .review-stars {
+            color: var(--copper);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            font-size: 0.9rem;
+            color: var(--ink-soft);
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .review-author {
+            margin-top: 16px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--muted);
+        }
+
+        /* ===== HORAIRES ===== */
+        .hours-section {
+            background: var(--night-mid);
+            padding: 48px 20px;
+            color: var(--white);
+        }
+
+        .hours-grid {
+            display: grid;
+            gap: 2px;
+            margin-top: 28px;
+            border-radius: var(--r);
+            overflow: hidden;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 20px;
+            background: rgba(255,255,255,0.04);
+            font-size: 0.9rem;
+        }
+
+        .hours-row.closed { color: rgba(255,255,255,0.35); }
+        .hours-row.closed .status { color: #f87171; }
+        .hours-row.open .status { color: #4ade80; }
+        .hours-row .day { font-weight: 500; }
+        .hours-row .time { color: rgba(255,255,255,0.6); font-size: 0.82rem; }
+
+        .call-block {
+            background: var(--copper);
+            border-radius: var(--r-lg);
+            padding: 28px 24px;
+            margin-top: 28px;
+            text-align: center;
+        }
+
+        .call-block .phone-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            display: block;
+            margin: 8px 0;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .call-block p { color: rgba(255,255,255,0.8); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; }
+
+        .call-block a.cta-white {
+            display: block;
+            background: white;
+            color: var(--copper-dark);
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 16px;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .call-block a:active { opacity: 0.85; }
+
+        /* ===== MAP ===== */
+        .map-section { padding: 0; }
+
+        .map-header {
+            padding: 48px 20px 24px;
+            background: var(--sand-dark);
+        }
+
+        .address-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            border-radius: 50px;
+            padding: 10px 16px;
+            font-size: 0.82rem;
+            margin-top: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            text-decoration: none;
+            color: var(--ink);
+            font-weight: 500;
+            transition: box-shadow 0.2s;
+        }
+
+        .address-chip:active { box-shadow: 0 1px 6px rgba(0,0,0,0.1); }
+
+        .map-frame {
+            height: 320px;
+            width: 100%;
+        }
+
+        .map-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--night);
+            color: rgba(255,255,255,0.4);
+            padding: 32px 20px calc(80px + env(safe-area-inset-bottom, 0px));
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 8px;
+        }
+
+        /* ===== DESKTOP OVERRIDES ===== */
+        @media (min-width: 768px) {
+            .bottom-bar { display: none; }
+
+            .hero {
+                padding: 80px 48px;
+            }
+
+            .quick-strip {
+                justify-content: center;
+            }
+
+            .section { padding: 80px 48px; }
+            .menu-section { padding: 80px 48px; }
+
+            .menu-grid.active {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .reviews-scroll {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                overflow: visible;
+                margin: 0;
+                padding: 0;
+            }
+
+            .review-card { min-width: auto; max-width: auto; }
+
+            .contact-layout {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                align-items: start;
+            }
+
+            .map-frame { height: 450px; }
+
+            footer { padding: 48px; }
+
+            .menu-tabs-scroll { margin: 28px 0 0; padding: 0; }
+        }
+
+        @media (min-width: 1024px) {
+            .menu-grid.active { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        /* ===== INTRO GRID (section Saveurs d'Orient) ===== */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .intro-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+            }
+        }
+
+        .info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 20px 24px;
+            border-radius: var(--r-lg);
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .info-card .info-icon { font-size: 1.4rem; flex-shrink: 0; }
+        .info-card strong { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--ink); display: block; margin-bottom: 2px; }
+        .info-card div { font-size: 0.9rem; color: var(--ink-soft); }
+
+        /* ===== UTILITIES ===== */
+        .mt-4 { margin-top: 16px; }
+        .mt-6 { margin-top: 24px; }
+        .text-muted { color: var(--muted); font-size: 0.9rem; }
+
+        .btn:active, .menu-card:active, .review-card:active {
+            transform: scale(0.98);
         }
     </style>
 </head>
 <body>
 
-    <!-- BOUTON APPEL MOBILE (CRO) -->
-    <a href="tel:+33665973558" class="sticky-mobile-call">Réserver à Wasquehal : 06 65 97 35 58</a>
+    <!-- STICKY BOTTOM BAR (MOBILE) -->
+    <div class="bottom-bar">
+        <a href="tel:+33665973558" class="bottom-btn primary">
+            <span class="icon">📞</span>
+            Réserver
+        </a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=59+rue+Jean+Jaures+59290+Wasquehal" target="_blank" class="bottom-btn">
+            <span class="icon">📍</span>
+            Itinéraire
+        </a>
+    </div>
 
     <!-- NAV -->
-    <nav>
-        <div class="container nav-inner">
-            <div class="logo">Le Théâtre</div>
-            <ul class="nav-links">
-                <li><a href="#menu">La Carte</a></li>
-                <li><a href="#apropos">Le Restaurant</a></li>
-                <li><a href="#contact">Accès</a></li>
-                <li><a href="tel:+33665973558" class="btn-nav">Réserver une table</a></li>
-            </ul>
+    <nav class="site-nav" id="siteNav">
+        <div class="nav-logo">
+            Le Théâtre
+            <span>Wasquehal</span>
         </div>
+        <ul class="nav-links-desktop">
+            <li><a href="#menu">La Carte</a></li>
+            <li><a href="#apropos">Le Restaurant</a></li>
+            <li><a href="#contact">Accès</a></li>
+        </ul>
+        <a href="tel:+33665973558" class="nav-call">RÉSERVER UNE TABLE</a>
     </nav>
 
-    <!-- HERO -->
+    <!-- HERO SECTION MODIFIÉE (TEXTES CENTRÉS + BOUTONS CÔTE À CÔTE) -->
     <section class="hero">
-        <div class="hero-content">
-            <span class="hero-label">Restaurant Marocain & Méditerranéen</span>
-            <h1>Le Théâtre</h1>
-            <p>Un dépaysement culinaire au cœur de Wasquehal</p>
-            <div class="hero-btns">
-                <a href="tel:+33665973558" class="btn btn-primary">📞 06 65 97 35 58</a>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=59+rue+Jean+Jaures+59290+Wasquehal" target="_blank" class="btn btn-outline">📍 Itinéraire</a>
-            </div>
-            <div class="badge-status">
-                <span class="dot"></span> Ouvert aujourd'hui • Wasquehal
-            </div>
+        <div class="hero-top-label">Restaurant Marocain & Méditerranéen</div>
+        <h1>Le Théâtre</h1>
+        <p class="hero-sub">Un dépaysement culinaire au cœur de Wasquehal</p>
+        
+        <div class="hero-ctas">
+            <a href="tel:+33665973558" class="btn btn-copper">📞 06 65 97 35 58</a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=59+rue+Jean+Jaures+59290+Wasquehal" target="_blank" class="btn btn-ghost">📍 ITINÉRAIRE</a>
+        </div>
+
+        <div class="hero-status-pill" id="statusPill">
+            <span class="status-dot" id="statusDot"></span>
+            <span id="statusText"></span>
         </div>
     </section>
 
-    <!-- SECTION 1: INTRO -->
-    <section class="section-padding container">
-        <div class="intro-grid">
-            <div>
-                <span class="label">Bienvenue</span>
-                <h2 class="section-title">Saveurs d'Orient à <em>Wasquehal</em></h2>
-                <p>Le Théâtre vous invite à une escale gourmande aux arômes incroyables. Spécialisé dans la cuisine marocaine et méditerranéenne, notre restaurant est une institution à Wasquehal pour les amateurs de couscous copieux et de tajines parfumés. Profitez d'un cadre agréable et d'un accueil chaleureux pour vos déjeuners et dîners.</p>
-                
-                <div class="stats-box">
-                    <div class="stat-item">
-                        <h3>4.6</h3>
-                        <p>Avis Tripadvisor</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>#7</h3>
-                        <p>sur 40 restos</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>100%</h3>
-                        <p>Fait Maison</p>
-                    </div>
-                </div>
-            </div>
-            <div class="info-cards">
-                <div class="info-card">
-                    <span class="icon">📍</span>
-                    <div><strong>ADRESSE</strong><br>59 rue Jean Jaurès, 59290 Wasquehal</div>
-                </div>
-                <div class="info-card">
-                    <span class="icon">📞</span>
-                    <div><strong>TÉLÉPHONE</strong><br><span style="color:var(--primary); font-weight:bold; font-size:1.2rem;">06 65 97 35 58</span></div>
-                </div>
-                <div class="info-card">
-                    <span class="icon">🕒</span>
-                    <div><strong>SERVICES</strong><br>Midi & Soir (Fermé le Lundi)</div>
-                </div>
-                <div class="info-card">
-                    <span class="icon">🥡</span>
-                    <div><strong>À EMPORTER</strong><br>Tous nos plats sont disponibles</div>
-                </div>
-            </div>
+    <!-- QUICK INFO STRIP -->
+    <div class="quick-strip">
+        <div class="quick-item">
+            <span class="qi-icon">📍</span>
+            <div><strong>59 rue Jean Jaurès</strong>Wasquehal, 59290</div>
         </div>
-    </section>
-
-    <!-- SECTION 2: HISTOIRE -->
-    <section id="apropos" class="section-padding container">
-        <div class="history-grid">
-            <div class="history-images">
-                <img src="image-plat.jpg" class="img-large" alt="Plat oriental au restaurant Le Théâtre">
-                <img src="image-boisson.jpg" class="img-small" alt="Thé à la menthe traditionnel">
-            </div>
-            <div>
-                <span class="label">L'Expérience</span>
-                <h2 class="section-title">Le goût de la <em>Tradition</em></h2>
-                <p>Au Théâtre, nous mettons un point d'honneur à la qualité de nos produits. Nos légumes sont fondants, nos viandes sont tendres et nos épices sont rigoureusement sélectionnées pour vous offrir un voyage gustatif authentique. Que ce soit pour un repas en amoureux ou un moment en famille, notre équipe vous assure un service professionnel et attentionné.</p>
-                <br>
-                <p>Ne manquez pas notre célèbre thé à la menthe, décrit par nos clients comme tout simplement parfait pour conclure votre repas sur une note de douceur.</p>
-                
-                <div class="features-box">
-                    <div class="feature-item">🥘<br><small>Couscous<br>Généreux</small></div>
-                    <div class="feature-item">🍯<br><small>Tajines<br>Maison</small></div>
-                    <div class="feature-item">☕<br><small>Thé à la<br>Menthe</small></div>
-                </div>
-                <a href="tel:+33665973558" class="btn btn-primary" style="margin-top:30px">Pensez à réserver</a>
-            </div>
+        <div class="quick-item">
+            <span class="qi-icon">🕒</span>
+            <div><strong>Midi & Soir</strong>Fermé le Lundi</div>
         </div>
-    </section>
-
-    <!-- SECTION 3: MENU INTERACTIF -->
-    <section id="menu" class="section-padding dark-section">
-        <div class="container" style="position:relative; z-index:1;">
-            <span class="label">Notre Carte</span>
-            <h2 class="section-title">Cuisine Méditerranéenne</h2>
-            <p>Une sélection de nos spécialités les plus appréciées.</p>
-
-            <div class="menu-tabs">
-                <div class="tab active" data-target="entrees">🥟 Entrées</div>
-                <div class="tab" data-target="plats">🍲 Plats Signatures</div>
-                <div class="tab" data-target="desserts">🍯 Douceurs</div>
-            </div>
-
-            <div class="menu-content-wrapper">
-                <!-- Entrées -->
-                <div class="menu-category active" id="entrees">
-                    <div class="menu-item">
-                        <div class="menu-header"><h4>Bricks Maison</h4><span class="price">7.50€</span></div>
-                        <p style="opacity:0.6; font-size:0.9rem;">Feuilles de brick croustillantes façon samoussa</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-header"><h4>Tchaktchouka</h4><span class="price">8.00€</span></div>
-                        <p style="opacity:0.6; font-size:0.9rem;">Mélange fondant de poivrons, tomates et épices</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-header"><h4>Salade Marocaine</h4><span class="price">7.00€</span></div>
-                        <p style="opacity:0.6; font-size:0.9rem;">Fraîcheur de tomates, concombres et coriandre</p>
-                    </div>
-                </div>
-
-                <!-- Plats -->
-                <div class="menu-category" id="plats">
-                    <div class="menu-item">
-                        <div class="menu-header"><h4>Couscous Royal</h4><span class="price">22.00€</span></div>
-                        <p style="opacity:0.6; font-size:0.9rem;">Agneau, merguez, poulet, semoule fine et légumes à volonté</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-header"><h4>Tajine d'Agneau</h4><span class="price">19.50€</span></div>
-                        <p style="opacity:0.6; font-size:0.9rem;">Mijoté avec pruneaux, amandes grillées et viande fondante</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-header"><h4>Couscous Merguez</h4><span class="price">16.00€</span></div>
-                        <p style="opacity:0.6; font-size:0.9rem;">Le classique généreux aux saveurs grillées</p>
-                    </div>
-                </div>
-                
-                <!-- Desserts -->
-                <div class="menu-category" id="desserts">
-                    <div class="menu-item">
-                        <div class="menu-header"><h4>Thé à la Menthe</h4><span class="price">3.50€</span></div>
-                        <p style="opacity:0.6; font-size:0.9rem;">Préparé dans les règles de l'art, servi bien chaud</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-header"><h4>Pâtisseries Orientales</h4><span class="price">6.50€</span></div>
-                        <p style="opacity:0.6; font-size:0.9rem;">Assortiment de baklawas et cornes de gazelle</p>
-                    </div>
-                </div>
-            </div>
-
-            <a href="tel:+33665973558" class="btn btn-reserve">RÉSERVER VOTRE TABLE • 06 65 97 35 58</a>
+        <div class="quick-item">
+            <span class="qi-icon">🥡</span>
+            <div><strong>À Emporter</strong>Tous nos plats</div>
         </div>
-    </section>
-
-    <!-- SECTION 4: TEMOIGNAGES -->
-    <section class="section-padding container">
-        <span class="label">Avis Clients</span>
-        <h2 class="section-title" style="margin-bottom:50px">Ce qu'ils disent de nous</h2>
-        <div class="testimonial-grid">
-            <div class="testi-card">
-                <div class="stars">★★★★★</div>
-                <p>"Repas de qualité, les légumes sont fondants, la viande tendre, le tout avec des arômes incroyables. Le cadre est très agréable et le service parfait."</p>
-                <p style="margin-top:20px; font-weight:bold;">— MELISSA L.</p>
-            </div>
-            <div class="testi-card">
-                <div class="stars">★★★★★</div>
-                <p>"Très bon accueil et dépaysement. Le couscous et la tajine étaient bons comme là-bas. Je recommande vivement pour la qualité des viandes."</p>
-                <p style="margin-top:20px; font-weight:bold;">— CHRISTOPHE W.</p>
-            </div>
-            <div class="testi-card">
-                <div class="stars">★★★★★</div>
-                <p>"Couscous copieux et délicieux. Le thé à la menthe est tout simplement parfait. Accueil sympathique de l'entrée à la sortie."</p>
-                <p style="margin-top:20px; font-weight:bold;">— SYLVIE D.</p>
-            </div>
+        <div class="quick-item">
+            <span class="qi-icon">⭐</span>
+            <div><strong>4.6 / 5</strong>Tripadvisor</div>
         </div>
-    </section>
+    </div>
 
-    <!-- SECTION 5: CONTACT -->
-    <section id="contact" class="section-padding container">
-        <h2 class="section-title">Nous trouver à Wasquehal</h2>
-        <div class="contact-container">
-            <div>
-                <p class="label">Coordonnées</p>
-                <p><strong>Le Théâtre</strong><br>59 rue Jean Jaurès<br>59290 Wasquehal<br>Proche de Lille</p>
-                
-                <p class="label" style="margin-top:30px">Réservations</p>
-                <p style="color:var(--primary); font-size:2rem; font-weight:bold;">📞 06 65 97 35 58</p>
-                <a href="tel:+33665973558" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:20px;">Appeler pour réserver</a>
-
-                <p class="label" style="margin-top:30px">Horaires d'ouverture</p>
-                <table class="horaires-table">
-                    <tr><td>Lundi</td><td style="text-align:right; color:#e74c3c;">Fermé</td></tr>
-                    <tr class="day-now"><td>Mar - Sam</td><td style="text-align:right;">11:30–14:00 / 19:30–22:00</td></tr>
-                    <tr><td>Dimanche</td><td style="text-align:right;">11:30–14:00 / 19:30–22:00</td></tr>
-                </table>
-                <p style="margin-top:15px; font-size:0.85rem; opacity:0.7;">* Pensez à réserver, surtout le week-end.</p>
-            </div>
-            
-            <div class="map-placeholder">
-                <iframe 
-                    title="Carte Google Maps Le Theatre Wasquehal"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2527.123456789!2d3.1311!3d50.6698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d58f338d17b1%3A0x0!2zNTkgUnVlIEplYW4gSmF1csOocywgNTkyOTAgV2FzcXVlaGFs!5e0!3m2!1sfr!2sfr!4v1714510000000" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </div>
-    </section>
-
-    <footer style="padding:60px 0 20px; text-align:center; border-top:1px solid rgba(0,0,0,0.05); font-size:0.9rem; opacity:0.8;">
+    <!-- ABOUT -->
+    <section id="apropos" class="section">
         <div class="container">
-            <p>&copy; 2026 Le Théâtre Wasquehal. Cuisine marocaine authentique.</p>
-            <p style="margin-top:10px; font-size:0.75rem;">
-                <a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a>
-            </p>
+            <div class="intro-grid">
+                <div>
+                    <div class="section-label">Bienvenue</div>
+                    <h2 class="section-title">Saveurs d'Orient à <em>Wasquehal</em></h2>
+                    <p class="text-muted">Le Théâtre vous invite à une escale gourmande aux arômes incroyables. Spécialisé dans la cuisine marocaine et méditerranéenne, notre restaurant est une institution à Wasquehal pour les amateurs de couscous copieux et de tajines parfumés. Profitez d'un cadre agréable et d'un accueil chaleureux pour vos déjeuners et dîners.</p>
+
+                    <div class="stats-row">
+                        <div class="stat-cell">
+                            <div class="val">4.6</div>
+                            <div class="lbl">Avis Tripadvisor</div>
+                        </div>
+                        <div class="stat-cell">
+                            <div class="val">#7</div>
+                            <div class="lbl">sur 40 restos</div>
+                        </div>
+                        <div class="stat-cell">
+                            <div class="val">100%</div>
+                            <div class="lbl">Fait Maison</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-cards">
+                    <div class="info-card">
+                        <span class="info-icon">📍</span>
+                        <div><strong>ADRESSE</strong><br>59 rue Jean Jaurès, 59290 Wasquehal</div>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-icon">📞</span>
+                        <div><strong>TÉLÉPHONE</strong><br><span style="color:var(--copper); font-weight:bold; font-size:1.2rem;">06 65 97 35 58</span></div>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-icon">🕒</span>
+                        <div><strong>SERVICES</strong><br>Midi & Soir (Fermé le Lundi)</div>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-icon">🥡</span>
+                        <div><strong>À EMPORTER</strong><br>Tous nos plats sont disponibles</div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="section-label" style="color: var(--copper-light);">Notre Carte</div>
+            <h2 class="section-title">Cuisine <em>Méditerranéenne</em></h2>
+            <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">Une sélection de nos spécialités les plus appréciées.</p>
+
+            <div class="menu-tabs-scroll">
+                <div class="menu-tabs">
+                    <button class="tab active" data-target="entrees">🥟 Entrées</button>
+                    <button class="tab" data-target="plats">🍲 Plats Signatures</button>
+                    <button class="tab" data-target="desserts">🍯 Douceurs</button>
+                </div>
+            </div>
+
+            <div class="menu-grid active" id="entrees">
+                <div class="menu-card">
+                    <div class="menu-card-info">
+                        <h4>Bricks Maison</h4>
+                        <p>Feuilles de brick croustillantes façon samoussa</p>
+                    </div>
+                    <div class="menu-price">7,50€</div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-info">
+                        <h4>Tchaktchouka</h4>
+                        <p>Mélange fondant de poivrons, tomates et épices</p>
+                    </div>
+                    <div class="menu-price">8,00€</div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-info">
+                        <h4>Salade Marocaine</h4>
+                        <p>Fraîcheur de tomates, concombres et coriandre</p>
+                    </div>
+                    <div class="menu-price">7,00€</div>
+                </div>
+            </div>
+
+            <div class="menu-grid" id="plats">
+                <div class="menu-card">
+                    <div class="menu-card-info">
+                        <h4>Couscous Royal</h4>
+                        <p>Agneau, merguez, poulet, semoule fine et légumes à volonté</p>
+                    </div>
+                    <div class="menu-price">22,00€</div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-info">
+                        <h4>Tajine d'Agneau</h4>
+                        <p>Mijoté avec pruneaux, amandes grillées et viande fondante</p>
+                    </div>
+                    <div class="menu-price">19,50€</div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-info">
+                        <h4>Couscous Merguez</h4>
+                        <p>Le classique généreux aux saveurs grillées</p>
+                    </div>
+                    <div class="menu-price">16,00€</div>
+                </div>
+            </div>
+
+            <div class="menu-grid" id="desserts">
+                <div class="menu-card">
+                    <div class="menu-card-info">
+                        <h4>Thé à la Menthe</h4>
+                        <p>Préparé dans les règles de l'art, servi bien chaud</p>
+                    </div>
+                    <div class="menu-price">3,50€</div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-info">
+                        <h4>Pâtisseries Orientales</h4>
+                        <p>Assortiment de baklawas et cornes de gazelle</p>
+                    </div>
+                    <div class="menu-price">6,50€</div>
+                </div>
+            </div>
+
+            <div class="menu-cta-row">
+                <a href="tel:+33665973558" class="btn btn-copper" style="margin: 0 auto; display: inline-flex;">
+                    📞 Réserver — 06 65 97 35 58
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-label">Avis Clients</div>
+            <h2 class="section-title">Ce qu'ils <em>disent</em></h2>
+            <div class="reviews-scroll mt-4">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Les légumes sont fondants, la viande tendre, le tout avec des arômes incroyables. Cadre très agréable et service parfait."</p>
+                    <div class="review-author">— Melissa L.</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Très bon accueil et dépaysement. Le couscous et la tajine étaient bons comme là-bas. Qualité des viandes au rendez-vous."</p>
+                    <div class="review-author">— Christophe W.</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Couscous copieux et délicieux. Le thé à la menthe est tout simplement parfait. Accueil sympathique de l'entrée à la sortie."</p>
+                    <div class="review-author">— Sylvie D.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / HORAIRES -->
+    <section id="contact" class="hours-section">
+        <div class="container">
+            <div class="section-label" style="color: var(--copper-light);">Informations Pratiques</div>
+            <h2 class="section-title" style="color: white;">Nous <em>trouver</em></h2>
+            
+            <div class="contact-layout">
+                <div>
+                    <div class="hours-grid">
+                        <div class="hours-row closed">
+                            <span class="day">Lundi</span>
+                            <span class="status">Fermé</span>
+                        </div>
+                        <div class="hours-row open">
+                            <span class="day">Mardi — Samedi</span>
+                            <span class="time">11h30–14h · 19h30–22h</span>
+                        </div>
+                        <div class="hours-row open">
+                            <span class="day">Dimanche</span>
+                            <span class="time">11h30–14h · 19h30–22h</span>
+                        </div>
+                    </div>
+
+                    <div class="call-block">
+                        <p>Réservations</p>
+                        <a class="phone-num" href="tel:+33665973558">06 65 97 35 58</a>
+                        <p>Pensez à réserver, surtout le week-end</p>
+                        <a href="tel:+33665973558" class="cta-white">Appeler pour réserver →</a>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=59+rue+Jean+Jaures+59290+Wasquehal" class="address-chip" target="_blank">
+                        📍 59 rue Jean Jaurès, 59290 Wasquehal — Obtenir l'itinéraire
+                    </a>
+                    <div class="map-frame mt-4" style="border-radius: var(--r-lg); overflow: hidden;">
+                        <iframe
+                            title="Carte Google Maps Le Theatre Wasquehal"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2527.123456789!2d3.1311!3d50.6698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d58f338d17b1%3A0x0!2zNTkgUnVlIEplYW4gSmF1csOocywgNTkyOTAgV2FzcXVlaGFs!5e0!3m2!1sfr!2sfr!4v1714510000000"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">Le Théâtre</div>
+        <p>Cuisine marocaine & méditerranéenne authentique · Wasquehal</p>
+        <p style="margin-top: 8px;">
+            <a href="#">Mentions Légales</a> &nbsp;·&nbsp; <a href="#">Confidentialité</a>
+        </p>
+        <p style="margin-top: 12px; font-size: 0.72rem;">© 2026 Le Théâtre Wasquehal</p>
     </footer>
 
-    <!-- SCRIPTS -->
     <script>
-        // 1. Défilement Fluide
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+        // Statut ouvert / fermé dynamique
+        (function() {
+            // Horaires : fermé lundi (0), ouvert mar-dim 11h30-14h et 19h30-22h
+            const now = new Date();
+            const day = now.getDay(); // 0=dim, 1=lun, 2=mar ... 6=sam
+            const h = now.getHours();
+            const m = now.getMinutes();
+            const time = h * 60 + m; // minutes depuis minuit
+
+            const midi_open  = 11 * 60 + 30; // 11h30
+            const midi_close = 14 * 60;       // 14h00
+            const soir_open  = 19 * 60 + 30; // 19h30
+            const soir_close = 22 * 60;       // 22h00
+
+            const isOpenDay = day !== 1; // fermé lundi
+            const isOpenNow = isOpenDay && (
+                (time >= midi_open && time < midi_close) ||
+                (time >= soir_open && time < soir_close)
+            );
+
+            const dot  = document.getElementById('statusDot');
+            const text = document.getElementById('statusText');
+
+            if (isOpenNow) {
+                dot.style.background = '#4ade80';
+                text.textContent = 'Ouvert maintenant • Wasquehal';
+            } else if (!isOpenDay) {
+                dot.style.background = '#f87171';
+                text.textContent = 'Fermé aujourd\'hui (lundi) • Wasquehal';
+            } else {
+                dot.style.background = '#f87171';
+                // Indiquer la prochaine ouverture
+                const nextSlot = time < midi_open ? '11h30'
+                               : time < soir_open ? '19h30'
+                               : 'demain à 11h30';
+                text.textContent = 'Fermé • Réouvre à ' + nextSlot;
+            }
+        })();
+
+        // Nav scroll effect
+        const nav = document.getElementById('siteNav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        }, { passive: true });
+
+        // Menu tabs
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = tab.dataset.target;
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.menu-grid').forEach(g => g.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(target).classList.add('active');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
                 if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 20,
-                        behavior: 'smooth'
-                    });
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
-
-        // 2. Gestion des onglets du menu (CRO)
-        const tabs = document.querySelectorAll('.tab');
-        const categories = document.querySelectorAll('.menu-category');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetId = tab.getAttribute('data-target');
-                
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-
-                categories.forEach(cat => {
-                    cat.classList.remove('active');
-                    if(cat.id === targetId) {
-                        cat.classList.add('active');
-                    }
-                });
-            });
-        });
     </script>
-
 </body>
 </html>
